@@ -12,7 +12,7 @@ namespace Lab7RandomCharacters
             Console.WriteLine(newChar.GenerateStrength());
             Console.WriteLine(newChar.GenerateSpeed());
             Console.WriteLine(newChar.GenerateHealth());
-
+            Console.WriteLine(newChar.GenerateSpecialAbilities());
 
         }
     }

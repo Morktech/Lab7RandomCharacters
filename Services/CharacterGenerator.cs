@@ -9,14 +9,41 @@ namespace Lab7RandomCharacters.Services
         
         private readonly Random _random = new Random();
 
-        string[] names
-            = { "Kaelen", "Draven", "WiseOldMan", "Isolde" , "Borin", "Andros Mai", "Ferox", "Oziach", "Derse Venator", "Phabelle Bile," };
+        string[] names =
+                {"Kaelen",
+                "Draven",
+                "WiseOldMan",
+                "Isolde" ,
+                "Borin",
+                "Andros Mai",
+                "Ferox",
+                "Oziach",
+                "Derse Venator",
+                "Phabelle Bile," };
 
-
+        string[] specialAbility =
+               {"Heal Allies",
+                "Ranged Volley",
+                "Magic missile",
+                "Teleport",
+                "Vanish",
+                "Thunderwave",
+                "Menacing Attack",
+                "Moonbeam",
+                "Eldritch Blast",
+                "Hunter's Mark",
+                "Smite",
+                "Lightning",
+                "Fireball"};
         public string GenerateName()
         {
             int randomIndex = _random.Next(names.Length);
             return names[randomIndex];
+        }
+        public string GenerateSpecialAbilities()
+        {
+            int randomIndex = _random.Next(specialAbility.Length);
+            return specialAbility[randomIndex];
         }
 
         public int GenerateStrength() => _random.Next(10, 101);
@@ -24,6 +51,8 @@ namespace Lab7RandomCharacters.Services
         public int GenerateSpeed() =>  _random.Next(1, 100);
        
         public int GenerateHealth() => _random.Next(50, 120);
-      
+
+       
+
     }
 }
