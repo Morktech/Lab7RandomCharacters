@@ -31,11 +31,10 @@ namespace Lab7RandomCharacters
                 characterList.Add(character);
             }
 
-            //foreach (Character hero in characterList)
-            //{
-
-            //    Console.WriteLine($"\n{hero}");
-            //}
+            foreach (Character hero in characterList)
+            {
+                Console.WriteLine($"\n{hero}");
+            }
         }
     }
 }
