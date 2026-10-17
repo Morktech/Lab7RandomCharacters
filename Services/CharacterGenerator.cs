@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using Lab7RandomCharacters.Models;
 
 namespace Lab7RandomCharacters.Services
 {
     internal class CharacterGenerator
     {
-        
+
         private readonly Random _random = new Random();
 
         string[] names =
@@ -21,10 +20,10 @@ namespace Lab7RandomCharacters.Services
                 "Derse Venator",
                 "Phabelle Bile," };
 
-        string[] specialAbility =
+        string[] specialAbilities =
                {"Heal Allies",
                 "Ranged Volley",
-                "Magic missile",
+                "Magic Missile",
                 "Teleport",
                 "Vanish",
                 "Thunderwave",
@@ -40,19 +39,30 @@ namespace Lab7RandomCharacters.Services
             int randomIndex = _random.Next(names.Length);
             return names[randomIndex];
         }
-        public string GenerateSpecialAbilities()
+        public string GenerateSpecialAbility()
         {
-            int randomIndex = _random.Next(specialAbility.Length);
-            return specialAbility[randomIndex];
+            int randomIndex = _random.Next(specialAbilities.Length);
+            return specialAbilities[randomIndex];
         }
 
         public int GenerateStrength() => _random.Next(10, 101);
-      
-        public int GenerateSpeed() =>  _random.Next(1, 100);
-       
+
+        public int GenerateSpeed() => _random.Next(1, 100);
+
         public int GenerateHealth() => _random.Next(50, 120);
 
-       
+        public Character GenerateCharacter()
+        {
+            Character character = new Character(
+                GenerateName(),
+                GenerateStrength(),
+                GenerateSpeed(),
+                GenerateHealth(),
+                GenerateSpecialAbility());
+
+            return character;
+        }
+
 
     }
 }

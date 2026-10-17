@@ -22,5 +22,16 @@ namespace Lab7RandomCharacters.Models
             SpecialAbility = specialAbility;
 
         }
+
+        public override string ToString()
+        {
+            return  $"\t{Name}" +
+                    $"\n"+
+                    $"\n--- Character Stats ---" +
+                    $"\nCon lvl: {Health} " +
+                    $"\nStr lvl: {Strength} " +
+                    $"\nAgi lvl: {Speed} " +
+                    $"\nSPECIAL: {SpecialAbility} ";
+        }
     }
 }
