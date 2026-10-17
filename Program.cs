@@ -1,4 +1,6 @@
-﻿using Lab7RandomCharacters.Services;
+﻿using Lab7RandomCharacters.Models;
+using Lab7RandomCharacters.Services;
+
 
 namespace Lab7RandomCharacters
 {
@@ -6,13 +8,11 @@ namespace Lab7RandomCharacters
     {
         static void Main(string[] args)
         {
-            CharacterGenerator newChar = new CharacterGenerator();
+            CharacterGenerator generator = new CharacterGenerator();
 
-            Console.WriteLine(newChar.GenerateName());
-            Console.WriteLine(newChar.GenerateStrength());
-            Console.WriteLine(newChar.GenerateSpeed());
-            Console.WriteLine(newChar.GenerateHealth());
-            Console.WriteLine(newChar.GenerateSpecialAbilities());
+            Character character = generator.GenerateCharacter();
+
+            Console.WriteLine(character);
 
         }
     }
