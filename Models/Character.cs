@@ -25,13 +25,14 @@ namespace Lab7RandomCharacters.Models
 
         public override string ToString()
         {
-            return  $"\t{Name}" +
-                    $"\n"+
-                    $"\n--- Character Stats ---" +
-                    $"\nCon lvl: {Health} " +
-                    $"\nStr lvl: {Strength} " +
-                    $"\nAgi lvl: {Speed} " +
-                    $"\nSPECIAL: {SpecialAbility} ";
+            return $"\t{Name}" +
+                 $"\n ----------------------" +
+                 $"\n| Character stats:" +
+                 $"\n| lvl: {Health}" +
+                 $"\n| Str lvl: {Strength}" +
+                 $"\n| Agi lvl: {Speed}" +
+                 $"\n| special: {SpecialAbility}";
+
         }
     }
 }
