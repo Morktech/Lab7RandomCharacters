@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Lab7RandomCharacters.Models
 {
+    // AI provided guidance on separating responsibilities between classes.
+    // I organized the generator logic in its own service class.
     internal class Character
     {
-        // Five properties for a character
         public string Name { get; set; } = "";
         public int Strength { get; set; }
         public int Speed { get; set; }
@@ -20,19 +18,20 @@ namespace Lab7RandomCharacters.Models
             Speed = speed;
             Health = health;
             SpecialAbility = specialAbility;
-
         }
 
+        // AI explained how ToString() works, 
+        // why i could use it without having a virtual method (Object.ToString()).
+        // I customized the output to display my character's properties.
         public override string ToString()
         {
-            return $"\t{Name}" +
-                 $"\n ----------------------" +
-                 $"\n| Character stats:" +
-                 $"\n| lvl: {Health}" +
-                 $"\n| Str lvl: {Strength}" +
-                 $"\n| Agi lvl: {Speed}" +
-                 $"\n| special: {SpecialAbility}";
-
+            return  $"\t{Name}" +
+                    $"\n ----------------------" +
+                    $"\n|  -Character stats-"  +
+                    $"\n| HP     : {Health}" +
+                    $"\n| STR lvl: {Strength}" +
+                    $"\n| SPD lvl: {Speed}" +
+                    $"\n| Ability: {SpecialAbility}";
         }
     }
 }
